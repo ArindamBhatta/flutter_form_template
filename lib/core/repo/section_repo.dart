@@ -1,5 +1,5 @@
-import 'package:form_template/core/widgets/section_with_form/data/repo/form_repo_mixin.dart';
-import 'package:form_template/core/widgets/section_with_form/data/service/form_service_mixin.dart';
+import 'package:form_template/core/repo/form_repo_mixin.dart';
+import 'package:form_template/core/service/form_service_mixin.dart';
 import 'package:form_template/models/data_model.dart';
 
 class SectionRepo<T extends DataModel> with FormRepoMixin<T> {

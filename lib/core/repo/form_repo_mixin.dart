@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:form_template/core/widgets/section_with_form/data/service/form_service_mixin.dart';
+import 'package:form_template/core/service/form_service_mixin.dart';
 import 'package:form_template/models/data_model.dart';
 
 //knows when and why to call CRUD, caches results, tracks IDs, emits streams.

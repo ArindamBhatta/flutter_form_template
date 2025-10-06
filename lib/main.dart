@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:form_template/core/repo/section_repo.dart';
+import 'package:form_template/core/service/section_service.dart';
+import 'package:form_template/models/pet_owner_model.dart';
+
+//core
 
 void main() {
   runApp(const FormApp());
@@ -11,7 +16,17 @@ class FormApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
-      providers: [RepositoryProvider(create: (_) {})],
+      providers: [
+        RepositoryProvider<SectionRepo<PetOwnerModel>>(
+          create: (_) => SectionRepo<PetOwnerModel>(
+            SectionService<PetOwnerModel>(
+              'petOwners',
+              (data) => PetOwnerModel.fromJson(data),
+            ),
+          ),
+          lazy: false,
+        ),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
